@@ -14,11 +14,11 @@ const findElmBinary = () => {
   const binDir = spawnSync("npm", ["bin"], {encoding: "utf8"})
     .stdout.toString("utf8")
     .trim();
-  return which("elm", {path: binDir})
-    .catch(() => which("elm"))
+  return which("gren", {path: binDir})
+    .catch(() => which("gren"))
     .catch(() => {
       console.log(
-        "No elm compiler found. Please make sure Elm is installed and available through any of these options."
+        "No gren compiler found. Please make sure Gren is installed and available through any of these options."
       );
       console.log("Looked for compiler in:");
       console.log(`- ${binDir}`);
